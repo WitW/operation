@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="header">
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <title>Title</title>
+</head>
+<script type="text/javascript" th:src="@{/js/jquery-2.1.1.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/avalon.js}"></script>
+<script type="text/javascript" th:src="@{/js/index.js}"></script>
+
+
+<body ms-controller="viewModel">
+
+<button type="button" ms-click="@request">获取</button>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <td>id</td>
+        <td>名称</td>
+        <td>价格</td>
+        <td>数量</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ms-for="el in @dataList">
+        <td>{{el.id}}</td>
+        <td>{{el.name}}</td>
+        <td>{{el.price}}</td>
+        <td>{{el.amount}}</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
